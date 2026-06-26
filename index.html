@@ -242,6 +242,16 @@
   .lock-dots span:nth-child(2){animation-delay:0.2s;}
   .lock-dots span:nth-child(3){animation-delay:0.4s;}
   @keyframes dotPulse{0%,100%{opacity:0.2;}50%{opacity:0.9;}}
+  .mystery-card.revealed{
+    border:1px solid rgba(212,175,55,0.5);
+    box-shadow:0 25px 55px -15px rgba(212,175,55,0.4);
+  }
+  .mystery-status.unlocked{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:#1F1F1F;
+    animation:unlockPop 0.6s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes unlockPop{0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;}}
 
   /* Quote */
   .quote-section{padding:30px 24px 100px;display:flex;justify-content:center;}
@@ -436,23 +446,23 @@
   <h2 class="section-title reveal">What's Waiting For You</h2>
   <p class="section-sub reveal">Three secrets. One reveal. All locked until the countdown hits zero.</p>
   <div class="card-grid">
-    <div class="mystery-card reveal">
+    <div class="mystery-card reveal" id="targetCard">
       <div class="mystery-icon">🎯</div>
       <div class="mystery-title">Target</div>
-      <div class="mystery-status">Coming Soon...</div>
-      <div class="lock-dots"><span></span><span></span><span></span></div>
+      <div class="mystery-status" id="targetStatus">Coming Soon...</div>
+      <div class="lock-dots" id="targetDots"><span></span><span></span><span></span></div>
     </div>
-    <div class="mystery-card reveal">
+    <div class="mystery-card reveal" id="rewardCard">
       <div class="mystery-icon">🏆</div>
       <div class="mystery-title">Reward</div>
-      <div class="mystery-status">Coming Soon...</div>
-      <div class="lock-dots"><span></span><span></span><span></span></div>
+      <div class="mystery-status" id="rewardStatus">Coming Soon...</div>
+      <div class="lock-dots" id="rewardDots"><span></span><span></span><span></span></div>
     </div>
-    <div class="mystery-card reveal">
+    <div class="mystery-card reveal" id="challengeCard">
       <div class="mystery-icon">🔥</div>
       <div class="mystery-title">Challenge</div>
-      <div class="mystery-status">Coming Soon...</div>
-      <div class="lock-dots"><span></span><span></span><span></span></div>
+      <div class="mystery-status" id="challengeStatus">Coming Soon...</div>
+      <div class="lock-dots" id="challengeDots"><span></span><span></span><span></span></div>
     </div>
   </div>
 </section>
@@ -571,17 +581,17 @@
     document.getElementById('countdownCard').classList.add('in');
   }, 150);
 
-  // ---------- Countdown ----------
-  // Target: 3 days from first page load, persisted in localStorage so it's consistent across refreshes
-  const COUNTDOWN_KEY = 'visionSquadDeadline';
-  let deadline = localStorage.getItem(COUNTDOWN_KEY);
-  if(!deadline){
-    deadline = Date.now() + (3*24*60*60*1000);
-    localStorage.setItem(COUNTDOWN_KEY, deadline);
-  } else {
-    deadline = parseInt(deadline, 10);
-  }
-  const totalDuration = 3*24*60*60*1000;
+  // ---------- GLOBAL FIXED COUNTDOWN ----------
+  // Target: 30 June 2026, 9:00 PM IST (IST = UTC+5:30)
+  // Using a fixed ISO string with explicit +05:30 offset so every visitor,
+  // on any device/timezone, computes the exact same target instant.
+  const TARGET_DATE = new Date("2026-06-30T21:00:00+05:30");
+
+  // Fixed reference start point for the progress bar (NOT page load time).
+  // This is a hardcoded constant date so the progress percentage is also
+  // identical for every visitor regardless of when they open the page.
+  const CAMPAIGN_START = new Date("2026-06-25T00:00:00+05:30");
+  const TOTAL_WINDOW_MS = TARGET_DATE.getTime() - CAMPAIGN_START.getTime();
 
   const elDays = document.getElementById('cd-days');
   const elHours = document.getElementById('cd-hours');
@@ -594,16 +604,54 @@
 
   function pad(n){ return n.toString().padStart(2,'0'); }
 
+  function revealChallengeContent(){
+    // Reveal Target
+    const targetStatus = document.getElementById('targetStatus');
+    targetStatus.textContent = '🎯 30-Day Discipline Sprint';
+    targetStatus.classList.add('unlocked');
+    document.getElementById('targetCard').classList.add('revealed');
+    document.getElementById('targetDots').style.display = 'none';
+
+    // Reveal Reward
+    const rewardStatus = document.getElementById('rewardStatus');
+    rewardStatus.textContent = '🏆 Exclusive Vision Squad Prize';
+    rewardStatus.classList.add('unlocked');
+    document.getElementById('rewardCard').classList.add('revealed');
+    document.getElementById('rewardDots').style.display = 'none';
+
+    // Reveal Challenge
+    const challengeStatus = document.getElementById('challengeStatus');
+    challengeStatus.textContent = '🔥 The Vision Squad Challenge Has Begun';
+    challengeStatus.classList.add('unlocked');
+    document.getElementById('challengeCard').classList.add('revealed');
+    document.getElementById('challengeDots').style.display = 'none';
+  }
+
+  let timerInterval = null;
+  let countdownEnded = false;
+
   function updateCountdown(){
-    const now = Date.now();
-    const remaining = deadline - now;
+    const now = new Date();
+    const remaining = TARGET_DATE.getTime() - now.getTime();
 
     if(remaining <= 0){
+      // Stop the timer
+      if(timerInterval){
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      countdownEnded = true;
+
+      // Show "Challenge Is Live!"
       countdownGrid.style.display = 'none';
       liveBanner.style.display = 'block';
+
+      // Lock progress bar at 100%
       progressFill.style.width = '100%';
       progressPercent.textContent = '100%';
-      clearInterval(timerInterval);
+
+      // Reveal hidden sections
+      revealChallengeContent();
       return;
     }
 
@@ -617,23 +665,24 @@
     elMins.textContent = pad(mins);
     elSecs.textContent = pad(secs);
 
-    const elapsed = totalDuration - remaining;
-    let pct = Math.min(100, Math.max(0, (elapsed/totalDuration)*100));
+    const elapsed = TOTAL_WINDOW_MS - remaining;
+    let pct = (elapsed/TOTAL_WINDOW_MS)*100;
+    pct = Math.min(100, Math.max(0, pct));
     progressFill.style.width = pct.toFixed(1)+'%';
     progressPercent.textContent = Math.round(pct)+'%';
   }
 
   updateCountdown();
-  const timerInterval = setInterval(updateCountdown, 1000);
+  if(!countdownEnded){
+    timerInterval = setInterval(updateCountdown, 1000);
+  }
 
   // ---------- Participants counter ----------
-  const PARTICIPANTS_KEY = 'visionSquadParticipants';
+  // Static display count (no storage). Increments only in-memory per session
+  // when the user clicks the button, purely as a visual touch — it does not
+  // persist and does not affect the countdown in any way.
   const participantsEl = document.getElementById('participantsCount');
-  let participantCount = parseInt(localStorage.getItem(PARTICIPANTS_KEY), 10);
-  if(isNaN(participantCount)){
-    participantCount = 126;
-    localStorage.setItem(PARTICIPANTS_KEY, participantCount);
-  }
+  let participantCount = 126;
 
   function renderParticipants(animate){
     if(animate){
@@ -663,11 +712,8 @@
   const WHATSAPP_URL = "https://wa.me/916374542721?text=I%20am%20ready%20for%20the%20Vision%20Squad%20Challenge";
 
   readyBtn.addEventListener('click', ()=>{
-    // increment participants locally
     participantCount += 1;
-    localStorage.setItem(PARTICIPANTS_KEY, participantCount);
     renderParticipants(true);
-
     overlay.classList.add('show');
   });
 

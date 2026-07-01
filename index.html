@@ -3,408 +3,548 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Vision Squad — The Biggest Challenge Is Almost Here</title>
-<meta name="description" content="Something big is coming. Vision Squad — Grow. Learn. Achieve. The challenge unlocks soon.">
+<title>Vision Squad — The Challenge Is Now Live 🔥</title>
+<meta name="description" content="Vision Squad 30-Day Challenge is officially live. Earn ₹1000 in 30 days. Win Premium Wireless Earbuds worth ₹1500.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E8CD79'/%3E%3Cstop offset='50%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%23B8912B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%23FAFAFA'/%3E%3Cpolygon points='50,8 88,28 88,72 50,92 12,72 12,28' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Cpath d='M30 40 L42 64 L50 48 L58 64 L70 40' fill='none' stroke='url(%23g)' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
-  :root{
-    --bg-soft:#FAFAFA;
-    --bg-cream:#FFF8F0;
-    --gold:#D4AF37;
-    --gold-light:#E8CD79;
-    --gold-deep:#B8912B;
-    --ink:#1F1F1F;
-    --ink-soft:#666666;
-    --line: rgba(31,31,31,0.08);
-    --glass: rgba(255,255,255,0.55);
-    --glass-border: rgba(255,255,255,0.7);
-    --shadow-soft: 0 20px 60px -20px rgba(31,31,31,0.12);
-    --shadow-gold: 0 20px 50px -15px rgba(212,175,55,0.45);
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Manrope',sans-serif;
-    background:
-      radial-gradient(circle at 15% 8%, rgba(212,175,55,0.07), transparent 40%),
-      radial-gradient(circle at 85% 22%, rgba(212,175,55,0.06), transparent 45%),
-      linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-cream) 100%);
-    color:var(--ink);
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.serif{font-family:'Cormorant Garamond', serif;}
-  ::selection{background:var(--gold-light);color:var(--ink);}
+/* ===== CSS VARIABLES (unchanged) ===== */
+:root{
+  --bg-soft:#FAFAFA;
+  --bg-cream:#FFF8F0;
+  --gold:#D4AF37;
+  --gold-light:#E8CD79;
+  --gold-deep:#B8912B;
+  --ink:#1F1F1F;
+  --ink-soft:#666666;
+  --line:rgba(31,31,31,0.08);
+  --glass:rgba(255,255,255,0.55);
+  --glass-border:rgba(255,255,255,0.75);
+  --shadow-soft:0 20px 60px -20px rgba(31,31,31,0.12);
+  --shadow-gold:0 20px 50px -15px rgba(212,175,55,0.45);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Manrope',sans-serif;
+  background:
+    radial-gradient(circle at 12% 6%, rgba(212,175,55,0.08),transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(212,175,55,0.07),transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(212,175,55,0.05),transparent 55%),
+    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-cream) 100%);
+  color:var(--ink);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;}
+::selection{background:var(--gold-light);color:var(--ink);}
+a{color:inherit;text-decoration:none;}
 
-  a{color:inherit;text-decoration:none;}
+/* ===== PARTICLES ===== */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
+.particle{
+  position:absolute;bottom:-10px;border-radius:50%;
+  background:radial-gradient(circle,var(--gold-light),var(--gold) 70%,transparent);
+  animation:floatUp linear infinite;
+}
+.sparkle{
+  position:absolute;pointer-events:none;
+  width:4px;height:4px;border-radius:50%;
+  background:var(--gold);
+  animation:sparklePop ease-out forwards;
+}
+@keyframes floatUp{
+  0%{transform:translateY(0) translateX(0) scale(0.5);opacity:0;}
+  8%{opacity:0.65;}
+  50%{transform:translateY(-52vh) translateX(18px) scale(1);}
+  92%{opacity:0.35;}
+  100%{transform:translateY(-108vh) translateX(-14px) scale(0.4);opacity:0;}
+}
+@keyframes sparklePop{
+  0%{transform:scale(0) translateY(0);opacity:1;}
+  60%{transform:scale(1.8) translateY(-18px);opacity:0.8;}
+  100%{transform:scale(0) translateY(-36px);opacity:0;}
+}
 
-  /* Particles */
-  #particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
-  .particle{
-    position:absolute;
-    bottom:-10px;
-    border-radius:50%;
-    background:radial-gradient(circle, var(--gold-light), var(--gold) 70%, transparent);
-    opacity:0.5;
-    animation:floatUp linear infinite;
-  }
-  @keyframes floatUp{
-    0%{transform:translateY(0) translateX(0) scale(0.6);opacity:0;}
-    10%{opacity:0.6;}
-    50%{transform:translateY(-50vh) translateX(20px) scale(1);}
-    90%{opacity:0.4;}
-    100%{transform:translateY(-105vh) translateX(-15px) scale(0.5);opacity:0;}
-  }
+/* Z-layering */
+section,header,footer{position:relative;z-index:2;}
 
-  section, header, footer{position:relative;z-index:2;}
+/* ===== SCROLL REVEAL ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(32px) scale(0.98);
+  transition:opacity 0.85s cubic-bezier(.16,1,.3,1),
+             transform 0.85s cubic-bezier(.16,1,.3,1),
+             filter 0.85s ease;
+  filter:blur(4px);
+}
+.reveal.in{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.22s;}
+.reveal-delay-3{transition-delay:0.34s;}
+.reveal-delay-4{transition-delay:0.46s;}
 
-  /* Nav / Title */
-  .brandbar{
-    display:flex;flex-direction:column;align-items:center;
-    padding:48px 24px 8px;
-    text-align:center;
-  }
-  .crown{font-size:28px;margin-bottom:6px;filter:drop-shadow(0 4px 10px rgba(212,175,55,0.4));}
-  .vs-logo{
-    width:64px;height:64px;margin-bottom:10px;
-    filter:drop-shadow(0 6px 16px rgba(212,175,55,0.45));
-    animation:logoFloat 4s ease-in-out infinite;
-  }
-  @keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
-  .brand-name{
-    font-size:clamp(22px,4vw,30px);
-    font-weight:700;
-    letter-spacing:0.18em;
-    color:var(--ink);
-  }
-  .brand-tag{
-    margin-top:6px;
-    font-size:13px;
-    letter-spacing:0.15em;
-    color:var(--ink-soft);
-    text-transform:uppercase;
-  }
+/* ===== BRAND BAR ===== */
+.brandbar{
+  display:flex;flex-direction:column;align-items:center;
+  padding:48px 24px 10px;text-align:center;
+}
+.vs-logo{
+  width:68px;height:68px;margin-bottom:10px;
+  filter:drop-shadow(0 6px 18px rgba(212,175,55,0.5));
+  animation:logoFloat 4s ease-in-out infinite;
+}
+@keyframes logoFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.brand-name{
+  font-size:clamp(22px,4vw,30px);font-weight:700;
+  letter-spacing:0.18em;color:var(--ink);
+}
+.brand-tag{
+  margin-top:6px;font-size:13px;letter-spacing:0.15em;
+  color:var(--ink-soft);text-transform:uppercase;
+}
 
-  /* Hero */
-  .hero{
-    padding:60px 24px 80px;
-    display:flex;flex-direction:column;align-items:center;text-align:center;
-    max-width:880px;margin:0 auto;
-  }
-  .badge{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:9px 20px;
-    border-radius:100px;
-    background:var(--glass);
-    border:1px solid var(--glass-border);
-    backdrop-filter:blur(12px);
-    box-shadow:var(--shadow-soft);
-    font-size:13px;font-weight:600;
-    letter-spacing:0.04em;
-    color:var(--gold-deep);
-    margin-bottom:32px;
-    animation:pulseGlow 3s ease-in-out infinite;
-    opacity:0;
-    animation-fill-mode: forwards;
-  }
-  @keyframes pulseGlow{
-    0%,100%{box-shadow:var(--shadow-soft), 0 0 0 0 rgba(212,175,55,0.0);}
-    50%{box-shadow:var(--shadow-soft), 0 0 0 8px rgba(212,175,55,0.08);}
-  }
-  .hero h1{
-    font-size:clamp(40px,7vw,72px);
-    font-weight:700;
-    line-height:1.08;
-    letter-spacing:-0.01em;
-    color:var(--ink);
-  }
-  .hero h1 .gold-text{
-    background:linear-gradient(120deg, var(--gold-deep), var(--gold) 40%, var(--gold-light) 60%, var(--gold-deep));
-    background-size:200% auto;
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    animation:shineText 5s linear infinite;
-  }
-  @keyframes shineText{0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
-  .hero p.sub{
-    margin-top:22px;
-    font-size:clamp(16px,2vw,19px);
-    color:var(--ink-soft);
-    max-width:560px;
-    line-height:1.65;
-  }
-  .hero p.sub b{color:var(--ink);font-weight:600;}
+/* ===== HERO ===== */
+.hero{
+  padding:56px 24px 80px;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;max-width:900px;margin:0 auto;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 22px;border-radius:100px;
+  background:var(--glass);border:1px solid var(--glass-border);
+  backdrop-filter:blur(14px);
+  font-size:13px;font-weight:700;letter-spacing:0.05em;
+  color:var(--gold-deep);margin-bottom:32px;
+  opacity:0;
+  animation:badgeIn 0.7s cubic-bezier(.34,1.56,.64,1) 0.3s forwards,
+             badgeGlow 3s ease-in-out 1s infinite;
+}
+@keyframes badgeIn{
+  from{opacity:0;transform:translateY(-14px) scale(0.9);}
+  to{opacity:1;transform:translateY(0) scale(1);}
+}
+@keyframes badgeGlow{
+  0%,100%{box-shadow:var(--shadow-soft),0 0 0 0 rgba(212,175,55,0);}
+  50%{box-shadow:var(--shadow-soft),0 0 0 10px rgba(212,175,55,0.1);}
+}
+.hero-eyebrow{
+  font-size:clamp(13px,1.8vw,15px);letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-deep);font-weight:700;margin-bottom:14px;
+  opacity:0;animation:fadeUp 0.7s ease 0.55s forwards;
+}
+.hero h1{
+  font-size:clamp(42px,7.5vw,78px);font-weight:700;
+  line-height:1.05;letter-spacing:-0.01em;color:var(--ink);
+  opacity:0;animation:fadeUp 0.8s cubic-bezier(.16,1,.3,1) 0.7s forwards;
+}
+.hero h1 .gold-text{
+  background:linear-gradient(115deg,var(--gold-deep),var(--gold) 38%,var(--gold-light) 58%,var(--gold-deep));
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shineText 5s linear infinite;
+}
+@keyframes shineText{0%{background-position:0% 50%;}100%{background-position:220% 50%;}}
+.hero-sub{
+  margin-top:24px;font-size:clamp(16px,2.2vw,20px);
+  color:var(--ink-soft);max-width:580px;line-height:1.68;
+  opacity:0;animation:fadeUp 0.8s ease 0.9s forwards;
+}
+.hero-sub b{color:var(--ink);font-weight:700;}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px);}
+  to{opacity:1;transform:translateY(0);}
+}
 
-  /* Reveal-on-scroll utility */
-  .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);}
-  .reveal.in{opacity:1;transform:translateY(0);}
+/* ===== SECTION LABELS ===== */
+.section-label{
+  text-align:center;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-deep);font-weight:700;margin-bottom:10px;
+}
+.section-title{
+  text-align:center;font-size:clamp(28px,4.5vw,40px);font-weight:700;
+  margin-bottom:12px;color:var(--ink);line-height:1.15;
+}
+.section-sub{
+  text-align:center;color:var(--ink-soft);font-size:15px;
+  margin-bottom:48px;max-width:520px;
+  margin-left:auto;margin-right:auto;line-height:1.65;
+}
 
-  /* Countdown */
-  .countdown-wrap{padding:20px 24px 90px;display:flex;justify-content:center;}
-  .countdown-card{
-    width:100%;max-width:780px;
-    background:var(--glass);
-    border:1px solid var(--glass-border);
-    backdrop-filter:blur(18px);
-    border-radius:32px;
-    padding:48px 28px;
-    box-shadow:var(--shadow-soft);
-    position:relative;
-    overflow:hidden;
-  }
-  .countdown-card::before{
-    content:'';position:absolute;inset:0;border-radius:32px;
-    background:linear-gradient(135deg, rgba(212,175,55,0.18), transparent 40%, rgba(212,175,55,0.1));
-    pointer-events:none;
-  }
-  .countdown-label{
-    text-align:center;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;
-    color:var(--gold-deep);font-weight:700;margin-bottom:30px;
-  }
-  .countdown-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    gap:14px;max-width:620px;margin:0 auto;
-  }
-  .time-box{
-    background:linear-gradient(160deg, #ffffff, var(--bg-cream));
-    border-radius:20px;
-    padding:20px 6px 16px;
-    text-align:center;
-    box-shadow:0 10px 30px -8px rgba(31,31,31,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
-    border:1px solid var(--line);
-    transition:transform 0.3s ease;
-  }
-  .time-box:hover{transform:translateY(-4px);}
-  .time-num{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(32px,6vw,52px);
-    font-weight:700;
-    color:var(--ink);
-    line-height:1;
-    background:linear-gradient(180deg,var(--ink), #3a3a3a);
-    -webkit-background-clip:text;background-clip:text;
-  }
-  .time-num.gold{
-    background:linear-gradient(180deg, var(--gold-deep), var(--gold));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  .time-unit{
-    margin-top:6px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;
-  }
-  .live-banner{
-    display:none;text-align:center;font-family:'Cormorant Garamond',serif;
-    font-size:clamp(28px,5vw,42px);font-weight:700;color:var(--gold-deep);
-    padding:30px 0;animation:liveIn 0.8s ease;
-  }
-  @keyframes liveIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+/* ===== CHALLENGE CARDS SECTION ===== */
+.challenge-section{padding:50px 24px 90px;max-width:1120px;margin:0 auto;}
+.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 
-  /* Mystery cards */
-  .section-title{
-    text-align:center;font-size:clamp(28px,4vw,38px);font-weight:700;
-    margin-bottom:12px;color:var(--ink);
-  }
-  .section-sub{
-    text-align:center;color:var(--ink-soft);font-size:15px;margin-bottom:48px;
-    max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;
-  }
-  .cards-section{padding:40px 24px 90px;max-width:1100px;margin:0 auto;}
-  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .mystery-card{
-    background:linear-gradient(165deg, #ffffff, var(--bg-cream));
-    border-radius:26px;
-    padding:42px 26px;
-    text-align:center;
-    border:1px solid var(--line);
-    box-shadow:var(--shadow-soft);
-    transition:transform 0.45s cubic-bezier(.16,1,.3,1), box-shadow 0.45s ease;
-    position:relative;
-    overflow:hidden;
-  }
-  .mystery-card::after{
-    content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
-    background:linear-gradient(115deg, transparent 40%, rgba(212,175,55,0.12) 50%, transparent 60%);
-    transform:translateX(-100%);
-    transition:transform 0.9s ease;
-  }
-  .mystery-card:hover::after{transform:translateX(100%);}
-  .mystery-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px -20px rgba(212,175,55,0.3);}
-  .mystery-icon{font-size:44px;margin-bottom:18px;display:inline-block;filter:drop-shadow(0 6px 14px rgba(212,175,55,0.35));}
-  .mystery-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:10px;}
-  .mystery-status{
-    display:inline-block;margin-top:6px;padding:6px 16px;border-radius:100px;
-    background:rgba(212,175,55,0.12);color:var(--gold-deep);font-size:12px;font-weight:700;
-    letter-spacing:0.06em;text-transform:uppercase;
-  }
-  .lock-dots{display:flex;justify-content:center;gap:6px;margin-top:16px;}
-  .lock-dots span{width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0.3;animation:dotPulse 1.4s ease-in-out infinite;}
-  .lock-dots span:nth-child(2){animation-delay:0.2s;}
-  .lock-dots span:nth-child(3){animation-delay:0.4s;}
-  @keyframes dotPulse{0%,100%{opacity:0.2;}50%{opacity:0.9;}}
-  .mystery-card.revealed{
-    border:1px solid rgba(212,175,55,0.5);
-    box-shadow:0 25px 55px -15px rgba(212,175,55,0.4);
-  }
-  .mystery-status.unlocked{
-    background:linear-gradient(135deg, var(--gold-light), var(--gold));
-    color:#1F1F1F;
-    animation:unlockPop 0.6s cubic-bezier(.34,1.56,.64,1);
-  }
-  @keyframes unlockPop{0%{transform:scale(0.7);opacity:0;}100%{transform:scale(1);opacity:1;}}
+/* BASE LUXURY CARD */
+.lux-card{
+  border-radius:28px;padding:40px 28px 36px;text-align:center;
+  background:linear-gradient(165deg,#ffffff,var(--bg-cream));
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-soft);
+  position:relative;overflow:hidden;
+  transition:transform 0.45s cubic-bezier(.16,1,.3,1),
+             box-shadow 0.45s ease;
+}
+.lux-card:hover{transform:translateY(-12px);box-shadow:0 35px 65px -18px rgba(212,175,55,0.35);}
+.lux-card::after{
+  content:'';position:absolute;top:-50%;left:-50%;
+  width:200%;height:200%;
+  background:linear-gradient(115deg,transparent 40%,rgba(212,175,55,0.14) 50%,transparent 60%);
+  transform:translateX(-100%);transition:transform 1s ease;
+}
+.lux-card:hover::after{transform:translateX(100%);}
 
-  /* Quote */
-  .quote-section{padding:30px 24px 100px;display:flex;justify-content:center;}
-  .quote-card{
-    max-width:760px;width:100%;text-align:center;
-    background:linear-gradient(150deg, var(--bg-cream), #ffffff);
-    border-radius:30px;
-    padding:64px 36px;
-    box-shadow:var(--shadow-soft);
-    border:1px solid var(--line);
-    position:relative;
-  }
-  .quote-mark{font-family:'Cormorant Garamond',serif;font-size:70px;color:var(--gold);opacity:0.5;line-height:0.5;}
-  .quote-text{
-    font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.6vw,32px);font-weight:600;
-    line-height:1.4;color:var(--ink);margin:18px 0 20px;font-style:italic;
-  }
-  .quote-sub{color:var(--gold-deep);font-weight:700;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;}
+/* TARGET CARD */
+.target-card{border:1.5px solid rgba(212,175,55,0.3);}
+.card-icon-wrap{
+  width:68px;height:68px;border-radius:50%;
+  background:linear-gradient(145deg,rgba(212,175,55,0.15),rgba(212,175,55,0.06));
+  border:1px solid rgba(212,175,55,0.25);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;font-size:32px;
+  animation:iconBounce 3.5s ease-in-out infinite;
+}
+@keyframes iconBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.card-title{
+  font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;
+  margin-bottom:8px;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;
+  font-size:13px;
+}
+.card-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,7vw,64px);font-weight:700;line-height:1;
+  background:linear-gradient(180deg,var(--gold-deep),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:10px 0 6px;
+}
+.card-desc{color:var(--ink-soft);font-size:14.5px;line-height:1.55;font-weight:500;}
+.card-tag{
+  display:inline-block;margin-top:16px;padding:7px 18px;border-radius:100px;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--ink);font-size:12.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
+  box-shadow:0 6px 20px -6px rgba(212,175,55,0.5);
+}
 
-  /* Benefits */
-  .benefits-section{padding:30px 24px 100px;max-width:1100px;margin:0 auto;}
-  .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .benefit-card{
-    background:rgba(255,255,255,0.6);
-    backdrop-filter:blur(10px);
-    border:1px solid var(--glass-border);
-    border-radius:24px;padding:38px 24px;text-align:center;
-    box-shadow:var(--shadow-soft);
-    transition:transform 0.4s cubic-bezier(.16,1,.3,1);
-  }
-  .benefit-card:hover{transform:translateY(-8px);}
-  .benefit-icon{font-size:38px;margin-bottom:16px;}
-  .benefit-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;margin-bottom:8px;}
-  .benefit-text{color:var(--ink-soft);font-size:14.5px;line-height:1.6;}
+/* REWARD CARD */
+.reward-card{border:1.5px solid rgba(212,175,55,0.3);}
+.gift-icon{
+  font-size:42px;
+  animation:giftFloat 2.5s ease-in-out infinite;
+  filter:drop-shadow(0 6px 12px rgba(212,175,55,0.4));
+  margin-bottom:18px;
+  display:inline-block;
+}
+@keyframes giftFloat{
+  0%,100%{transform:translateY(0) rotate(-4deg);}
+  50%{transform:translateY(-8px) rotate(4deg);}
+}
+.reward-price{
+  font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,44px);font-weight:700;
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold),var(--gold-light));
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shineText 4s linear infinite;
+  margin:8px 0;
+}
+.shine-bar{
+  height:3px;width:80%;margin:14px auto 0;border-radius:100px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  animation:shineBarAnim 2.5s ease-in-out infinite;
+}
+@keyframes shineBarAnim{0%{opacity:0.3;width:40%;}50%{opacity:1;width:80%;}100%{opacity:0.3;width:40%;}}
 
-  /* CTA */
-  .cta-section{padding:40px 24px 110px;display:flex;flex-direction:column;align-items:center;text-align:center;}
-  .cta-title{font-size:clamp(26px,4vw,36px);font-weight:700;margin-bottom:14px;}
-  .cta-sub{color:var(--ink-soft);max-width:480px;margin-bottom:38px;line-height:1.6;}
-  .cta-button{
-    position:relative;
-    font-family:'Manrope',sans-serif;
-    font-size:18px;font-weight:800;letter-spacing:0.03em;
-    color:#1F1F1F;
-    background:linear-gradient(135deg, var(--gold-light), var(--gold) 50%, var(--gold-deep));
-    border:none;border-radius:100px;
-    padding:20px 52px;
-    cursor:pointer;
-    box-shadow:var(--shadow-gold);
-    transition:transform 0.3s cubic-bezier(.16,1,.3,1), box-shadow 0.3s ease;
-    overflow:hidden;
-  }
-  .cta-button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 28px 60px -14px rgba(212,175,55,0.6);}
-  .cta-button:active{transform:translateY(0) scale(0.98);}
-  .cta-button::before{
-    content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
-    transform:skewX(-20deg);
-    animation:btnShine 3s ease-in-out infinite;
-  }
-  @keyframes btnShine{0%{left:-75%;}50%{left:130%;}100%{left:130%;}}
+/* BONUS CARD */
+.bonus-card{
+  border:1.5px solid rgba(212,175,55,0.45);
+  background:linear-gradient(155deg,#fff9f0,#ffffff);
+}
+.bonus-card::before{
+  content:'';position:absolute;inset:0;border-radius:26px;
+  background:linear-gradient(145deg,rgba(212,175,55,0.1),transparent 55%,rgba(212,175,55,0.07));
+  pointer-events:none;
+}
+.sparkle-ring{
+  position:absolute;inset:-1px;border-radius:28px;
+  border:2px solid transparent;
+  background:linear-gradient(var(--bg-cream),var(--bg-cream)) padding-box,
+             linear-gradient(120deg,var(--gold-light),var(--gold),var(--gold-deep),var(--gold),var(--gold-light)) border-box;
+  background-size:300% 300%;
+  animation:borderRotate 4s linear infinite;
+  pointer-events:none;
+}
+@keyframes borderRotate{0%{background-position:0% 50%;}100%{background-position:300% 50%;}}
+.mystery-text{
+  margin-top:12px;
+  background:linear-gradient(120deg,var(--gold-deep),var(--gold),var(--gold-light),var(--gold));
+  background-size:200% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-weight:800;font-size:15px;letter-spacing:0.04em;
+  animation:shineText 3.5s linear infinite;
+}
+.pulse-dots{display:flex;justify-content:center;gap:7px;margin-top:16px;}
+.pulse-dots span{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  animation:pdot 1.4s ease-in-out infinite;
+}
+.pulse-dots span:nth-child(2){animation-delay:0.22s;}
+.pulse-dots span:nth-child(3){animation-delay:0.44s;}
+@keyframes pdot{0%,100%{opacity:0.2;transform:scale(0.8);}50%{opacity:1;transform:scale(1.2);}}
 
-  /* Participants */
-  .participants-section{padding:20px 24px 100px;display:flex;justify-content:center;}
-  .participants-card{
-    max-width:420px;width:100%;text-align:center;
-    background:linear-gradient(165deg,#ffffff, var(--bg-cream));
-    border-radius:28px;padding:46px 30px;
-    box-shadow:var(--shadow-soft);border:1px solid var(--line);
-  }
-  .participants-icon{font-size:36px;margin-bottom:12px;}
-  .participants-count{
-    font-family:'Cormorant Garamond',serif;font-weight:700;
-    font-size:clamp(48px,8vw,68px);
-    background:linear-gradient(180deg, var(--gold-deep), var(--gold));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-    line-height:1;
-  }
-  .participants-label{margin-top:8px;color:var(--ink-soft);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;}
+/* ===== RULES TIMELINE ===== */
+.rules-section{padding:20px 24px 90px;max-width:760px;margin:0 auto;}
+.timeline{display:flex;flex-direction:column;gap:16px;margin-top:10px;}
+.rule-card{
+  display:flex;align-items:flex-start;gap:20px;
+  background:var(--glass);backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);border-radius:22px;
+  padding:26px 24px;
+  box-shadow:var(--shadow-soft);
+  transition:transform 0.4s cubic-bezier(.16,1,.3,1),box-shadow 0.4s ease;
+}
+.rule-card:hover{transform:translateX(8px);box-shadow:0 20px 45px -12px rgba(212,175,55,0.28);}
+.rule-num{
+  flex-shrink:0;
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;color:var(--ink);
+  box-shadow:0 8px 20px -6px rgba(212,175,55,0.5);
+  flex-direction:column;
+}
+.rule-num span{font-size:10px;font-family:'Manrope',sans-serif;font-weight:700;line-height:1;}
+.rule-body h4{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:4px;}
+.rule-body p{color:var(--ink-soft);font-size:14px;line-height:1.55;}
 
-  /* Progress */
-  .progress-section{padding:20px 24px 110px;display:flex;justify-content:center;}
-  .progress-card{
-    max-width:560px;width:100%;
-    background:rgba(255,255,255,0.6);backdrop-filter:blur(10px);
-    border:1px solid var(--glass-border);border-radius:26px;
-    padding:36px 30px;box-shadow:var(--shadow-soft);
-  }
-  .progress-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;}
-  .progress-top h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;}
-  .progress-percent{color:var(--gold-deep);font-weight:800;font-size:18px;}
-  .progress-track{
-    width:100%;height:14px;border-radius:100px;background:rgba(31,31,31,0.07);
-    overflow:hidden;box-shadow:inset 0 2px 4px rgba(0,0,0,0.05);
-  }
-  .progress-fill{
-    height:100%;width:0%;border-radius:100px;
-    background:linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
-    transition:width 1.6s cubic-bezier(.16,1,.3,1);
-    box-shadow:0 0 14px rgba(212,175,55,0.6);
-  }
-  .progress-caption{margin-top:12px;font-size:13px;color:var(--ink-soft);}
+/* ===== MOTIVATION ===== */
+.motivation-section{padding:20px 24px 90px;display:flex;justify-content:center;}
+.quote-card{
+  max-width:780px;width:100%;text-align:center;
+  background:linear-gradient(155deg,#fffcf4,#ffffff);
+  border-radius:32px;padding:70px 36px;
+  box-shadow:var(--shadow-soft),0 0 80px -20px rgba(212,175,55,0.2);
+  border:1.5px solid rgba(212,175,55,0.18);
+  position:relative;overflow:hidden;
+}
+.quote-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.quote-bg-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:700;
+  color:rgba(212,175,55,0.05);pointer-events:none;white-space:nowrap;
+  line-height:1;user-select:none;
+}
+.q-mark{
+  font-family:'Cormorant Garamond',serif;font-size:80px;
+  color:var(--gold);opacity:0.45;line-height:0.7;
+}
+.quote-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(24px,4vw,36px);font-weight:600;
+  line-height:1.38;color:var(--ink);margin:18px 0 20px;font-style:italic;
+  position:relative;z-index:1;
+}
+.quote-author{
+  color:var(--gold-deep);font-weight:700;font-size:13px;
+  letter-spacing:0.14em;text-transform:uppercase;
+}
 
-  /* Footer */
-  footer{
-    text-align:center;padding:50px 24px 40px;
-    border-top:1px solid var(--line);
-  }
-  .footer-brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;letter-spacing:0.1em;}
-  .footer-tag{margin-top:6px;color:var(--ink-soft);font-size:13px;letter-spacing:0.08em;}
-  .footer-copy{margin-top:18px;color:#999;font-size:12px;}
+/* ===== CHALLENGE PROGRESS ===== */
+.progress-section{padding:20px 24px 90px;display:flex;justify-content:center;}
+.progress-card{
+  max-width:600px;width:100%;
+  background:rgba(255,255,255,0.62);backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);border-radius:28px;
+  padding:38px 32px;box-shadow:var(--shadow-soft);
+}
+.progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;}
+.progress-header h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;}
+.progress-pct{color:var(--gold-deep);font-weight:800;font-size:20px;}
+.progress-track{
+  width:100%;height:16px;border-radius:100px;
+  background:rgba(31,31,31,0.07);
+  overflow:hidden;box-shadow:inset 0 2px 5px rgba(0,0,0,0.05);
+}
+.progress-fill{
+  height:100%;width:0%;border-radius:100px;
+  background:linear-gradient(90deg,var(--gold-deep),var(--gold),var(--gold-light));
+  box-shadow:0 0 16px rgba(212,175,55,0.65);
+  transition:width 2s cubic-bezier(.16,1,.3,1);
+  position:relative;overflow:hidden;
+}
+.progress-fill::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.45) 50%,transparent 100%);
+  animation:progressShine 2s linear infinite;
+}
+@keyframes progressShine{0%{transform:translateX(-100%);}100%{transform:translateX(200%);}}
+.progress-caption{margin-top:12px;color:var(--ink-soft);font-size:13px;}
 
-  /* Popup */
-  .overlay{
-    position:fixed;inset:0;background:rgba(31,31,31,0.45);backdrop-filter:blur(4px);
-    display:none;align-items:center;justify-content:center;z-index:999;padding:24px;
-    opacity:0;transition:opacity 0.35s ease;
-  }
-  .overlay.show{display:flex;opacity:1;}
-  .popup{
-    background:linear-gradient(165deg,#ffffff, var(--bg-cream));
-    border-radius:28px;max-width:420px;width:100%;padding:46px 34px;text-align:center;
-    box-shadow:0 40px 90px -20px rgba(0,0,0,0.35);
-    border:1px solid var(--glass-border);
-    transform:scale(0.85) translateY(20px);opacity:0;
-    transition:transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.4s ease;
-  }
-  .overlay.show .popup{transform:scale(1) translateY(0);opacity:1;}
-  .popup-crown{font-size:34px;margin-bottom:10px;}
-  .popup h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;margin-bottom:14px;}
-  .popup p{color:var(--ink-soft);font-size:14.5px;line-height:1.7;margin-bottom:6px;}
-  .popup-btn{
-    margin-top:26px;width:100%;
-    background:linear-gradient(135deg, var(--gold-light), var(--gold) 50%, var(--gold-deep));
-    border:none;border-radius:100px;padding:16px;font-size:15.5px;font-weight:800;
-    color:#1F1F1F;cursor:pointer;box-shadow:var(--shadow-gold);
-    transition:transform 0.25s ease;
-  }
-  .popup-btn:hover{transform:translateY(-2px);}
+/* ===== PARTICIPANTS ===== */
+.participants-section{padding:10px 24px 80px;display:flex;justify-content:center;}
+.participants-card{
+  max-width:440px;width:100%;text-align:center;
+  background:linear-gradient(165deg,#ffffff,var(--bg-cream));
+  border-radius:28px;padding:46px 32px;
+  box-shadow:var(--shadow-soft);border:1px solid var(--line);
+}
+.participants-count{
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+  font-size:clamp(54px,9vw,76px);
+  background:linear-gradient(180deg,var(--gold-deep),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;
+}
+.participants-label{
+  margin-top:8px;color:var(--ink-soft);font-size:13px;
+  letter-spacing:0.12em;text-transform:uppercase;font-weight:600;
+}
 
-  @media (max-width:780px){
-    .card-grid, .benefit-grid{grid-template-columns:1fr;}
-    .countdown-grid{gap:10px;}
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important;transition:none !important;}
-  }
+/* ===== CTA ===== */
+.cta-section{
+  padding:40px 24px 110px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.cta-title{font-size:clamp(26px,4.5vw,40px);font-weight:700;margin-bottom:12px;}
+.cta-sub{color:var(--ink-soft);max-width:500px;margin-bottom:40px;line-height:1.65;font-size:15px;}
+.cta-button{
+  position:relative;
+  font-family:'Manrope',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:0.02em;
+  color:#1A1200;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold) 48%,var(--gold-deep));
+  border:none;border-radius:100px;
+  padding:22px 56px;
+  cursor:pointer;
+  box-shadow:var(--shadow-gold);
+  transition:transform 0.35s cubic-bezier(.34,1.56,.64,1),
+             box-shadow 0.35s ease;
+  overflow:hidden;
+  outline:none;
+}
+.cta-button:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 32px 64px -14px rgba(212,175,55,0.65);
+}
+.cta-button:active{transform:scale(0.97);}
+/* Continuous shimmer */
+.cta-button::before{
+  content:'';position:absolute;top:0;left:-80%;
+  width:55%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+  transform:skewX(-20deg);
+  animation:btnShine 2.8s ease-in-out infinite;
+}
+@keyframes btnShine{0%{left:-80%;}60%{left:140%;}100%{left:140%;}}
+/* Magnetic hover wobble handled by JS */
+/* Ripple */
+.ripple{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,0.45);
+  transform:scale(0);
+  animation:rippleAnim 0.65s linear;
+  pointer-events:none;
+}
+@keyframes rippleAnim{to{transform:scale(4.5);opacity:0;}}
+
+/* ===== POPUP ===== */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(20,14,0,0.5);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;
+  z-index:999;padding:24px;
+  opacity:0;transition:opacity 0.3s ease;
+}
+.overlay.show{display:flex;opacity:1;}
+.popup{
+  background:linear-gradient(160deg,#ffffff,var(--bg-cream));
+  border-radius:30px;max-width:460px;width:100%;
+  padding:48px 36px;text-align:center;
+  box-shadow:0 50px 100px -24px rgba(0,0,0,0.4);
+  border:1px solid var(--glass-border);
+  transform:scale(0.82) translateY(24px);opacity:0;
+  transition:transform 0.45s cubic-bezier(.34,1.56,.64,1),opacity 0.4s ease;
+  position:relative;overflow:hidden;
+}
+.popup::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.overlay.show .popup{transform:scale(1) translateY(0);opacity:1;}
+.popup-crown{font-size:38px;margin-bottom:12px;animation:iconBounce 2.5s ease-in-out infinite;}
+.popup h3{
+  font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;
+  margin-bottom:10px;
+}
+.popup-details{
+  margin:20px 0;padding:20px;
+  background:rgba(212,175,55,0.08);
+  border:1px solid rgba(212,175,55,0.2);
+  border-radius:18px;
+  text-align:left;display:flex;flex-direction:column;gap:10px;
+}
+.popup-detail-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;}
+.popup-detail-row .detail-key{color:var(--ink-soft);font-weight:600;letter-spacing:0.04em;}
+.popup-detail-row .detail-val{font-weight:700;color:var(--ink);}
+.popup-detail-row .detail-val.gold{
+  background:linear-gradient(135deg,var(--gold-deep),var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.popup-note{
+  font-size:13px;color:var(--ink-soft);line-height:1.55;margin-bottom:4px;
+}
+.popup-btn{
+  margin-top:22px;width:100%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold) 50%,var(--gold-deep));
+  border:none;border-radius:100px;padding:18px;
+  font-family:'Manrope',sans-serif;
+  font-size:15.5px;font-weight:800;color:#1A1200;cursor:pointer;
+  box-shadow:var(--shadow-gold);
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+  position:relative;overflow:hidden;
+}
+.popup-btn:hover{transform:translateY(-2px);box-shadow:0 22px 44px -10px rgba(212,175,55,0.6);}
+.popup-close{
+  position:absolute;top:16px;right:18px;
+  background:none;border:none;cursor:pointer;
+  color:var(--ink-soft);font-size:20px;line-height:1;
+  transition:color 0.2s;
+}
+.popup-close:hover{color:var(--ink);}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;padding:52px 24px 42px;
+  border-top:1px solid var(--line);
+}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;letter-spacing:0.12em;}
+.footer-tag{margin-top:6px;color:var(--ink-soft);font-size:13px;letter-spacing:0.09em;}
+.footer-quote{
+  margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:17px;color:var(--ink-soft);
+}
+.footer-copy{margin-top:18px;color:#aaa;font-size:12px;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:780px){
+  .challenge-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important;}
+}
 </style>
 </head>
 <body>
 
+<!-- PARTICLE LAYER -->
 <div id="particles"></div>
 
+<!-- BRAND -->
 <header class="brandbar">
   <svg class="vs-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -415,7 +555,7 @@
       </linearGradient>
     </defs>
     <polygon points="50,4 92,27 92,73 50,96 8,73 8,27" fill="none" stroke="url(#vsGold)" stroke-width="3"/>
-    <polygon points="50,18 80,34 80,66 50,82 20,66 20,34" fill="none" stroke="url(#vsGold)" stroke-width="1.4" opacity="0.55"/>
+    <polygon points="50,18 80,34 80,66 50,82 20,66 20,34" fill="none" stroke="url(#vsGold)" stroke-width="1.4" opacity="0.5"/>
     <path d="M30 40 L42 64 L50 48 L58 64 L70 40" fill="none" stroke="url(#vsGold)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
     <circle cx="50" cy="50" r="3" fill="url(#vsGold)"/>
   </svg>
@@ -423,311 +563,379 @@
   <div class="brand-tag">Grow • Learn • Achieve</div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="badge" id="heroBadge">🚀 Something Big Is Coming</div>
-  <h1 class="reveal" id="heroHeading">The Biggest Challenge<br><span class="gold-text">Is Almost Here.</span></h1>
-  <p class="sub reveal" id="heroSub">Get ready to unlock your next level.<br>The <b>target</b>, <b>reward</b> and complete <b>challenge</b> will only be revealed when the countdown ends.</p>
+  <div class="badge">🎉 OFFICIAL CHALLENGE STARTED</div>
+  <div class="hero-eyebrow">👑 Vision Squad Presents</div>
+  <h1>THE CHALLENGE<br><span class="gold-text">IS NOW LIVE</span></h1>
+  <p class="hero-sub">The wait is finally over.<br><b>This is your opportunity to prove your consistency.</b></p>
 </section>
 
-<section class="countdown-wrap">
-  <div class="countdown-card reveal" id="countdownCard">
-    <div class="countdown-label">⏳ Reveal Countdown</div>
-    <div class="countdown-grid" id="countdownGrid">
-      <div class="time-box"><div class="time-num gold" id="cd-days">03</div><div class="time-unit">Days</div></div>
-      <div class="time-box"><div class="time-num gold" id="cd-hours">00</div><div class="time-unit">Hours</div></div>
-      <div class="time-box"><div class="time-num gold" id="cd-mins">00</div><div class="time-unit">Minutes</div></div>
-      <div class="time-box"><div class="time-num gold" id="cd-secs">00</div><div class="time-unit">Seconds</div></div>
+<!-- CHALLENGE CARDS -->
+<section class="challenge-section">
+  <div class="section-label">What's At Stake</div>
+  <h2 class="section-title reveal">Your Mission. Your Reward.</h2>
+  <p class="section-sub reveal">Everything you need to know — the target, the reward, and the exclusive first-achiever bonus.</p>
+
+  <div class="challenge-grid">
+
+    <!-- TARGET CARD -->
+    <div class="lux-card target-card reveal reveal-delay-1">
+      <div class="card-icon-wrap">🎯</div>
+      <div class="card-title">Your Target</div>
+      <div class="card-big" id="earnCounter">₹0</div>
+      <div class="card-desc">Earn this amount within <strong>30 days</strong> to complete the challenge.</div>
+      <div class="card-tag">⏱ 30 Days</div>
     </div>
-    <div class="live-banner" id="liveBanner">🎉 Challenge Is Live!</div>
+
+    <!-- REWARD CARD -->
+    <div class="lux-card reward-card reveal reveal-delay-2">
+      <div class="gift-icon">🎁</div>
+      <div class="card-title">Your Reward</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:4px;">Premium Wireless Earbuds</div>
+      <div class="reward-price">₹1500</div>
+      <div class="card-desc">Complete the challenge and claim your premium prize. 🏆</div>
+      <div class="shine-bar"></div>
+    </div>
+
+    <!-- BONUS CARD -->
+    <div class="lux-card bonus-card reveal reveal-delay-3">
+      <div class="sparkle-ring"></div>
+      <div class="card-icon-wrap" style="background:linear-gradient(145deg,rgba(212,175,55,0.25),rgba(212,175,55,0.1));">👑</div>
+      <div class="card-title">First Achiever Bonus</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin:10px 0 8px;">Exclusive Surprise</div>
+      <div class="mystery-text">🎁 Secret reward revealed only to the FIRST to complete.</div>
+      <div class="card-desc" style="margin-top:12px;font-size:13.5px;">Will it be you?</div>
+      <div class="pulse-dots"><span></span><span></span><span></span></div>
+    </div>
+
   </div>
 </section>
 
-<section class="cards-section">
-  <h2 class="section-title reveal">What's Waiting For You</h2>
-  <p class="section-sub reveal">Three secrets. One reveal. All locked until the countdown hits zero.</p>
-  <div class="card-grid">
-    <div class="mystery-card reveal" id="targetCard">
-      <div class="mystery-icon">🎯</div>
-      <div class="mystery-title">Target</div>
-      <div class="mystery-status" id="targetStatus">Coming Soon...</div>
-      <div class="lock-dots" id="targetDots"><span></span><span></span><span></span></div>
+<!-- RULES TIMELINE -->
+<section class="rules-section">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title reveal">4 Simple Steps</h2>
+  <p class="section-sub reveal">Follow these steps to officially complete the Vision Squad Challenge.</p>
+
+  <div class="timeline">
+    <div class="rule-card reveal reveal-delay-1">
+      <div class="rule-num">1</div>
+      <div class="rule-body">
+        <h4>Complete Within 30 Days</h4>
+        <p>The clock starts now. You have exactly 30 days from today to complete the challenge. No extensions.</p>
+      </div>
     </div>
-    <div class="mystery-card reveal" id="rewardCard">
-      <div class="mystery-icon">🏆</div>
-      <div class="mystery-title">Reward</div>
-      <div class="mystery-status" id="rewardStatus">Coming Soon...</div>
-      <div class="lock-dots" id="rewardDots"><span></span><span></span><span></span></div>
+    <div class="rule-card reveal reveal-delay-2">
+      <div class="rule-num">2</div>
+      <div class="rule-body">
+        <h4>Earn ₹1000 Income</h4>
+        <p>Generate a verified income of ₹1000 through any consistent effort during the challenge period.</p>
+      </div>
     </div>
-    <div class="mystery-card reveal" id="challengeCard">
-      <div class="mystery-icon">🔥</div>
-      <div class="mystery-title">Challenge</div>
-      <div class="mystery-status" id="challengeStatus">Coming Soon...</div>
-      <div class="lock-dots" id="challengeDots"><span></span><span></span><span></span></div>
+    <div class="rule-card reveal reveal-delay-3">
+      <div class="rule-num">3</div>
+      <div class="rule-body">
+        <h4>Submit Proof</h4>
+        <p>Send your valid proof of income to the Vision Squad WhatsApp group. Screenshots and records count.</p>
+      </div>
+    </div>
+    <div class="rule-card reveal reveal-delay-4">
+      <div class="rule-num">4</div>
+      <div class="rule-body">
+        <h4>Receive Your Reward</h4>
+        <p>Verified challengers receive their Premium Wireless Earbuds. First achiever gets the exclusive bonus. 🏆</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="quote-section">
+<!-- MOTIVATION -->
+<section class="motivation-section">
   <div class="quote-card reveal">
-    <div class="quote-mark">"</div>
-    <div class="quote-text">Success belongs to those who stay consistent when nobody is watching.</div>
-    <div class="quote-sub">Consistency creates Champions</div>
+    <div class="quote-bg-text">"</div>
+    <div class="q-mark">"</div>
+    <div class="quote-text">Discipline beats motivation.<br>Consistency wins every single time.</div>
+    <div class="quote-author">— Vision Squad Creed</div>
   </div>
 </section>
 
-<section class="benefits-section">
-  <h2 class="section-title reveal">Why Join</h2>
-  <p class="section-sub reveal">This isn't just a challenge. It's the start of who you become.</p>
-  <div class="benefit-grid">
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">📈</div>
-      <div class="benefit-title">Growth</div>
-      <div class="benefit-text">Become a better version of yourself.</div>
+<!-- PROGRESS -->
+<section class="progress-section">
+  <div class="progress-card reveal">
+    <div class="progress-header">
+      <h3>Challenge Progress</h3>
+      <span class="progress-pct" id="progressPct">0%</span>
     </div>
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">⚡</div>
-      <div class="benefit-title">Challenge</div>
-      <div class="benefit-text">Push beyond your comfort zone.</div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
     </div>
-    <div class="benefit-card reveal">
-      <div class="benefit-icon">🏆</div>
-      <div class="benefit-title">Reward</div>
-      <div class="benefit-text">Recognition awaits those who stay consistent.</div>
-    </div>
+    <div class="progress-caption">Challenge started today — keep going! 🔥</div>
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="cta-title reveal">Ready To Take The First Step?</div>
-  <p class="cta-sub reveal">Lock in your spot. The reveal is closer than you think.</p>
-  <button class="cta-button reveal" id="readyBtn">🚀 I'M READY</button>
-</section>
-
+<!-- PARTICIPANTS -->
 <section class="participants-section">
   <div class="participants-card reveal">
-    <div class="participants-icon">🔥</div>
+    <div style="font-size:36px;margin-bottom:10px;">🔥</div>
     <div class="participants-count" id="participantsCount">126</div>
     <div class="participants-label">Challengers Ready</div>
   </div>
 </section>
 
-<section class="progress-section">
-  <div class="progress-card reveal">
-    <div class="progress-top">
-      <h3>Challenge Unlocking...</h3>
-      <span class="progress-percent" id="progressPercent">0%</span>
-    </div>
-    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-caption">Countdown Progress</div>
-  </div>
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title reveal">Are You Ready?</h2>
+  <p class="cta-sub reveal">Join now. Accept the challenge.<br>The first achiever wins something extraordinary.</p>
+  <button class="cta-button reveal" id="readyBtn">🚀 ACCEPT THE CHALLENGE</button>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-brand">VISION SQUAD</div>
   <div class="footer-tag">Grow • Learn • Achieve</div>
-  <div class="footer-copy">© 2026 Vision Squad</div>
+  <div class="footer-quote">"Dreams don't work unless you do."</div>
+  <div class="footer-copy">© 2026 Vision Squad — All rights reserved.</div>
 </footer>
 
+<!-- POPUP -->
 <div class="overlay" id="overlay">
   <div class="popup">
+    <button class="popup-close" id="popupClose">✕</button>
     <div class="popup-crown">👑</div>
-    <h3>Welcome Challenger 👑</h3>
-    <p>You have taken the first step.</p>
-    <p>Stay prepared. The countdown is running.</p>
-    <p>The challenge will be revealed soon.</p>
-    <button class="popup-btn" id="continueBtn">Continue →</button>
+    <h3>Welcome Challenger!</h3>
+    <p style="color:var(--ink-soft);font-size:14.5px;line-height:1.6;margin-bottom:2px;">
+      Congratulations! You are officially participating in the<br>
+      <strong style="color:var(--ink)">Vision Squad 30-Day Challenge.</strong>
+    </p>
+
+    <div class="popup-details">
+      <div class="popup-detail-row">
+        <span class="detail-key">🎯 Target</span>
+        <span class="detail-val gold">₹1000 Income</span>
+      </div>
+      <div class="popup-detail-row">
+        <span class="detail-key">⏱ Duration</span>
+        <span class="detail-val">30 Days</span>
+      </div>
+      <div class="popup-detail-row">
+        <span class="detail-key">🏆 Reward</span>
+        <span class="detail-val">Premium Wireless Earbuds</span>
+      </div>
+      <div class="popup-detail-row">
+        <span class="detail-key">🎁 Bonus</span>
+        <span class="detail-val gold">Exclusive Surprise</span>
+      </div>
+    </div>
+
+    <p class="popup-note">Click below to join the Vision Squad WhatsApp group and lock in your spot. 💪</p>
+    <button class="popup-btn" id="continueBtn">Continue to WhatsApp →</button>
   </div>
 </div>
 
 <script>
-  // ---------- Particles ----------
-  const particleContainer = document.getElementById('particles');
-  const PARTICLE_COUNT = 26;
-  for(let i=0;i<PARTICLE_COUNT;i++){
+/* ===================================================
+   VISION SQUAD — REVEAL DAY JS
+   =================================================== */
+
+// ---- 1. PARTICLES ----
+(function(){
+  const container = document.getElementById('particles');
+  for(let i=0;i<32;i++){
     const p = document.createElement('div');
     p.className = 'particle';
-    const size = Math.random()*6+3;
-    p.style.width = size+'px';
-    p.style.height = size+'px';
-    p.style.left = Math.random()*100+'%';
-    p.style.animationDuration = (Math.random()*12+10)+'s';
-    p.style.animationDelay = (Math.random()*10)+'s';
-    particleContainer.appendChild(p);
+    const s = Math.random()*7+3;
+    p.style.cssText = `
+      width:${s}px;height:${s}px;
+      left:${Math.random()*100}%;
+      opacity:${Math.random()*0.4+0.2};
+      animation-duration:${Math.random()*14+9}s;
+      animation-delay:${Math.random()*12}s;
+    `;
+    container.appendChild(p);
   }
+})();
 
-  // ---------- Hero badge fade-in ----------
-  window.addEventListener('load', ()=>{
-    document.getElementById('heroBadge').style.animation = 'fadeInBadge 0.8s ease forwards, pulseGlow 3s ease-in-out 0.8s infinite';
-  });
-  const styleSheet = document.createElement('style');
-  styleSheet.textContent = `@keyframes fadeInBadge{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}`;
-  document.head.appendChild(styleSheet);
-
-  // ---------- Scroll reveal ----------
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
+// ---- 2. SCROLL REVEAL ----
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
       }
     });
-  }, {threshold:0.15});
-  revealEls.forEach(el=>io.observe(el));
-  // immediately reveal hero heading/sub
+  },{threshold:0.12});
+  els.forEach(el=>io.observe(el));
+  // Instant reveal for above-fold
   setTimeout(()=>{
-    document.getElementById('heroHeading').classList.add('in');
-    document.getElementById('heroSub').classList.add('in');
-    document.getElementById('countdownCard').classList.add('in');
-  }, 150);
+    document.querySelectorAll('.hero .reveal, .hero ~ * .reveal').forEach(el=>{
+      // only scroll-triggered, skip these
+    });
+  },100);
+})();
 
-  // ---------- GLOBAL FIXED COUNTDOWN ----------
-  // Target: 30 June 2026, 9:00 PM IST (IST = UTC+5:30)
-  // Using a fixed ISO string with explicit +05:30 offset so every visitor,
-  // on any device/timezone, computes the exact same target instant.
-  const TARGET_DATE = new Date("2026-06-30T21:00:00+05:30");
-
-  // Fixed reference start point for the progress bar (NOT page load time).
-  // This is a hardcoded constant date so the progress percentage is also
-  // identical for every visitor regardless of when they open the page.
-  const CAMPAIGN_START = new Date("2026-06-25T00:00:00+05:30");
-  const TOTAL_WINDOW_MS = TARGET_DATE.getTime() - CAMPAIGN_START.getTime();
-
-  const elDays = document.getElementById('cd-days');
-  const elHours = document.getElementById('cd-hours');
-  const elMins = document.getElementById('cd-mins');
-  const elSecs = document.getElementById('cd-secs');
-  const countdownGrid = document.getElementById('countdownGrid');
-  const liveBanner = document.getElementById('liveBanner');
-  const progressFill = document.getElementById('progressFill');
-  const progressPercent = document.getElementById('progressPercent');
-
-  function pad(n){ return n.toString().padStart(2,'0'); }
-
-  function revealChallengeContent(){
-    // Reveal Target
-    const targetStatus = document.getElementById('targetStatus');
-    targetStatus.textContent = '🎯 30-Day Discipline Sprint';
-    targetStatus.classList.add('unlocked');
-    document.getElementById('targetCard').classList.add('revealed');
-    document.getElementById('targetDots').style.display = 'none';
-
-    // Reveal Reward
-    const rewardStatus = document.getElementById('rewardStatus');
-    rewardStatus.textContent = '🏆 Exclusive Vision Squad Prize';
-    rewardStatus.classList.add('unlocked');
-    document.getElementById('rewardCard').classList.add('revealed');
-    document.getElementById('rewardDots').style.display = 'none';
-
-    // Reveal Challenge
-    const challengeStatus = document.getElementById('challengeStatus');
-    challengeStatus.textContent = '🔥 The Vision Squad Challenge Has Begun';
-    challengeStatus.classList.add('unlocked');
-    document.getElementById('challengeCard').classList.add('revealed');
-    document.getElementById('challengeDots').style.display = 'none';
-  }
-
-  let timerInterval = null;
-  let countdownEnded = false;
-
-  function updateCountdown(){
-    const now = new Date();
-    const remaining = TARGET_DATE.getTime() - now.getTime();
-
-    if(remaining <= 0){
-      // Stop the timer
-      if(timerInterval){
-        clearInterval(timerInterval);
-        timerInterval = null;
+// ---- 3. TARGET COUNTER ANIMATION ----
+(function(){
+  const el = document.getElementById('earnCounter');
+  let started = false;
+  const io = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !started){
+      started = true;
+      let current = 0;
+      const target = 1000;
+      const duration = 1800;
+      const startTime = performance.now();
+      function tick(now){
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed/duration, 1);
+        const eased = 1 - Math.pow(1-progress,3);
+        current = Math.round(eased * target);
+        el.textContent = '₹'+current.toLocaleString('en-IN');
+        if(progress < 1) requestAnimationFrame(tick);
       }
-      countdownEnded = true;
-
-      // Show "Challenge Is Live!"
-      countdownGrid.style.display = 'none';
-      liveBanner.style.display = 'block';
-
-      // Lock progress bar at 100%
-      progressFill.style.width = '100%';
-      progressPercent.textContent = '100%';
-
-      // Reveal hidden sections
-      revealChallengeContent();
-      return;
+      requestAnimationFrame(tick);
     }
+  },{threshold:0.3});
+  io.observe(el);
+})();
 
-    const days = Math.floor(remaining/(1000*60*60*24));
-    const hours = Math.floor((remaining/(1000*60*60))%24);
-    const mins = Math.floor((remaining/(1000*60))%60);
-    const secs = Math.floor((remaining/1000)%60);
-
-    elDays.textContent = pad(days);
-    elHours.textContent = pad(hours);
-    elMins.textContent = pad(mins);
-    elSecs.textContent = pad(secs);
-
-    const elapsed = TOTAL_WINDOW_MS - remaining;
-    let pct = (elapsed/TOTAL_WINDOW_MS)*100;
-    pct = Math.min(100, Math.max(0, pct));
-    progressFill.style.width = pct.toFixed(1)+'%';
-    progressPercent.textContent = Math.round(pct)+'%';
-  }
-
-  updateCountdown();
-  if(!countdownEnded){
-    timerInterval = setInterval(updateCountdown, 1000);
-  }
-
-  // ---------- Participants counter ----------
-  // Static display count (no storage). Increments only in-memory per session
-  // when the user clicks the button, purely as a visual touch — it does not
-  // persist and does not affect the countdown in any way.
-  const participantsEl = document.getElementById('participantsCount');
-  let participantCount = 126;
-
-  function renderParticipants(animate){
-    if(animate){
-      const start = participantCount - 1;
-      const end = participantCount;
-      participantsEl.textContent = start;
-      let frame = 0;
-      const totalFrames = 14;
-      const step = ()=>{
-        frame++;
-        const val = Math.round(start + (end-start)*(frame/totalFrames));
-        participantsEl.textContent = val;
-        if(frame < totalFrames) requestAnimationFrame(step);
-        else participantsEl.textContent = end;
-      };
-      requestAnimationFrame(step);
-    } else {
-      participantsEl.textContent = participantCount;
+// ---- 4. PROGRESS BAR ----
+(function(){
+  const fill = document.getElementById('progressFill');
+  const pct  = document.getElementById('progressPct');
+  let started = false;
+  const io = new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting && !started){
+      started = true;
+      // Challenge just started → show a small initial progress (day 1 of 30)
+      const dayProgress = Math.round((1/30)*100);
+      setTimeout(()=>{
+        fill.style.width = dayProgress+'%';
+        pct.textContent = dayProgress+'%';
+      },300);
     }
-  }
-  renderParticipants(false);
+  },{threshold:0.3});
+  io.observe(fill);
+})();
 
-  // ---------- CTA Popup + WhatsApp flow ----------
-  const readyBtn = document.getElementById('readyBtn');
-  const overlay = document.getElementById('overlay');
-  const continueBtn = document.getElementById('continueBtn');
-  const WHATSAPP_URL = "https://wa.me/916374542721?text=I%20am%20ready%20for%20the%20Vision%20Squad%20Challenge";
+// ---- 5. CTA BUTTON RIPPLE + MAGNETIC HOVER ----
+(function(){
+  const btn = document.getElementById('readyBtn');
 
-  readyBtn.addEventListener('click', ()=>{
-    participantCount += 1;
-    renderParticipants(true);
-    overlay.classList.add('show');
+  // Ripple on click
+  btn.addEventListener('click', function(e){
+    const r = document.createElement('span');
+    r.className = 'ripple';
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height) * 1.2;
+    r.style.width = r.style.height = size+'px';
+    r.style.left = (e.clientX - rect.left - size/2)+'px';
+    r.style.top  = (e.clientY - rect.top  - size/2)+'px';
+    btn.appendChild(r);
+    setTimeout(()=>r.remove(), 700);
   });
 
-  continueBtn.addEventListener('click', ()=>{
-    overlay.classList.remove('show');
-    window.open(WHATSAPP_URL, '_blank');
+  // Magnetic hover
+  btn.addEventListener('mousemove', function(e){
+    const rect = btn.getBoundingClientRect();
+    const cx = rect.left + rect.width/2;
+    const cy = rect.top  + rect.height/2;
+    const dx = (e.clientX - cx) * 0.22;
+    const dy = (e.clientY - cy) * 0.22;
+    btn.style.transform = `translateY(-4px) scale(1.03) translate(${dx}px,${dy}px)`;
+  });
+  btn.addEventListener('mouseleave', function(){
+    btn.style.transform = '';
+  });
+})();
+
+// ---- 6. POPUP + WHATSAPP ----
+(function(){
+  const btn      = document.getElementById('readyBtn');
+  const overlay  = document.getElementById('overlay');
+  const closeBtn = document.getElementById('popupClose');
+  const contBtn  = document.getElementById('continueBtn');
+  const countEl  = document.getElementById('participantsCount');
+  const WA_URL   = "https://wa.me/916374542721?text=%F0%9F%94%A5%20I%20accept%20the%20Vision%20Squad%2030-Day%20Challenge!%20My%20goal%20is%20to%20earn%20%E2%82%B91000%20within%2030%20days.%20I%27m%20ready!%20%F0%9F%92%AA";
+  let count = 126;
+
+  function openPopup(){
+    count++;
+    let c = count - 1;
+    const target = count;
+    const tick = ()=>{
+      c++;
+      countEl.textContent = c;
+      if(c < target) setTimeout(tick, 60);
+    };
+    tick();
+
+    overlay.style.display = 'flex';
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{ overlay.style.opacity = '1'; });
+    });
+  }
+
+  function closePopup(){
+    overlay.style.opacity = '0';
+    setTimeout(()=>{ overlay.style.display = 'none'; },320);
+  }
+
+  btn.addEventListener('click', openPopup);
+
+  closeBtn.addEventListener('click', closePopup);
+
+  overlay.addEventListener('click', e=>{
+    if(e.target === overlay) closePopup();
   });
 
-  overlay.addEventListener('click', (e)=>{
-    if(e.target === overlay){
-      overlay.classList.remove('show');
-    }
+  contBtn.addEventListener('click', ()=>{
+    closePopup();
+    setTimeout(()=>window.open(WA_URL,'_blank'), 200);
+
+    // Extra sparkles on continue
+    spawnSparkles(contBtn);
   });
+
+  // Ripple on popup btn
+  contBtn.addEventListener('click', function(e){
+    const r = document.createElement('span');
+    r.className = 'ripple';
+    const rect = contBtn.getBoundingClientRect();
+    const size = Math.max(rect.width,rect.height)*1.2;
+    r.style.width = r.style.height = size+'px';
+    r.style.left = (e.clientX-rect.left-size/2)+'px';
+    r.style.top  = (e.clientY-rect.top -size/2)+'px';
+    contBtn.appendChild(r);
+    setTimeout(()=>r.remove(),700);
+  });
+})();
+
+// ---- 7. SPARKLE BURST ----
+function spawnSparkles(el){
+  const rect = el.getBoundingClientRect();
+  const cx = rect.left + rect.width/2;
+  const cy = rect.top  + rect.height/2;
+  for(let i=0;i<14;i++){
+    const sp = document.createElement('div');
+    sp.className = 'sparkle';
+    const angle = (i/14)*Math.PI*2;
+    const dist = Math.random()*60+30;
+    const sx = cx + Math.cos(angle)*dist;
+    const sy = cy + Math.sin(angle)*dist;
+    sp.style.left = sx+'px';
+    sp.style.top  = sy+'px';
+    sp.style.position = 'fixed';
+    sp.style.animationDuration = (Math.random()*400+300)+'ms';
+    document.body.appendChild(sp);
+    setTimeout(()=>sp.remove(), 800);
+  }
+}
+
+// ---- 8. OPTIONAL SOFT CLICK SOUND ----
+
 </script>
-
 </body>
 </html>
